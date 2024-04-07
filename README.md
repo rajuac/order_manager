@@ -33,6 +33,7 @@ rails db:migrate
 # The seed file extract data from the input files
 rails db:seed
 
-
+#To load the styles 
+rake assets:precompile
 #Finally start the server
 rails s
