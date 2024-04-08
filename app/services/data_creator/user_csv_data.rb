@@ -10,7 +10,7 @@ module DataCreator
 
     def make_csv_data
       user = params[:user]
-      order_details = UserProductDetail.where(user_id: user.id)
+      order_details = UserProductDetail.includes(:product).where(user_id: user.id)
       headers = %w[USERNAME USER_EMAIL PRODUCT_CODE PRODUCT_NAME PRODUCT_CATEGORY ORDER_DATE]
       csv_data = []
 
